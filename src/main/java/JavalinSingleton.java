@@ -19,9 +19,11 @@ public class JavalinSingleton {
         
         // normally will call 'app.start(9000)' preceding but it's mentioned above already done in main() method of test cases
         // Side Note: could also call .start(9000) --- chained to Javalin.create() above
-        
+
         //write endpoint here
         app.get("/hello", ctx -> {
+            // https://javalin.io/documentation#context
+            // calling .result() response method from Context obj -- get currrent result stream as String (if possible) & reset result stream
             ctx.result("Hello World");
         });
 
