@@ -17,7 +17,13 @@ public class JavalinSingleton {
     public static Javalin getInstance(){
         Javalin app = Javalin.create();
         
+        // normally will call 'app.start(9000)' preceding but it's mentioned above already done in main() method of test cases
+        // Side Note: could also call .start(9000) --- chained to Javalin.create() above
+        
         //write endpoint here
+        app.get("/hello", ctx -> {
+            ctx.result("Hello World");
+        });
 
         return app;
     }
